@@ -4,4 +4,4 @@ seaborn
 scikit-learn
 catboost
 xgboost
-# typing -e .
+typing -e .
