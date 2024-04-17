@@ -3,7 +3,7 @@ from typing import List
 
 ''' Created function to return list of requirements '''
 HYPEN_E_DOT="typing -e ."
-def get_requirements(file_path:str)->List[str]: # type: ignore
+def get_requirements(file_path:str)->List[str]:
     requirements=[]
     with open(file_path) as file_obj:
         requirements=file_obj.readlines()
