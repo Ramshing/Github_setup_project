@@ -1,6 +1,8 @@
 import os
 import sys
-from src.exception import CustomException
+sys.path.insert(0,'D:\Github_setup_project\src\exception.py')
+sys.path.insert(0,'D:\Github_setup_project\src\logger.py')
+from src.exception import CustomException 
 from src.logger import logging
 import pandas as pd
 
@@ -23,7 +25,7 @@ class DataIngestion:
             df=pd.read_csv("notebook\data\stud.csv")
             logging.info("read the dataset")
 
-            os.makedirs(os.path.dirname(self.ingestion_config.train_data_path),exit_ok=True)  # make a directory for artifacts folder
+            os.makedirs(os.path.dirname(self.ingestion_config.train_data_path),exist_ok=True)  # make a directory for artifacts folder
             df.to_csv(self.ingestion_config.raw_data_path,index=False,header=True)     # Created artifacts folder for raw data
             logging.info("Train_test_split initiated")
             train_set,test_set=train_test_split(df,test_size=0.2,random_state=42)
